@@ -33,4 +33,19 @@ public class UserService implements IUserService{
     public void remote(Long id) {
         userRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByNameUser(username);
+    }
+
+    @Override
+    public Boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    @Override
+    public Boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
 }

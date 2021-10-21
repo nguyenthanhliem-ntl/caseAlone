@@ -31,7 +31,7 @@ public class User {
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roleSet = new HashSet<>();
-    public User() {
+    public User(String username, String email, String encode) {
     }
 
     public User(Long id, String username, String email, String password, String phoneNumber, String address, String registration, Long citizenIdentification, Long taxNumber, String image, List<Car> carList, List<Like> likeList, Set<Role> roleSet) {
